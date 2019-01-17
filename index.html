@@ -1156,7 +1156,7 @@ s.parentNode.insertBefore(g,s)}(document,'script'));
         {block:IndexPage}<a class="relative-dates" href="{Permalink}">{/block:IndexPage}{block:PermalinkPage}<span class="relative-dates">{/block:PermalinkPage}{TimeAgo}{block:IndexPage}</a>{/block:IndexPage}{block:PermalinkPage}</span>{/block:PermalinkPage}
         {block:IndexPage}<a class="us" href="{Permalink}">{/block:IndexPage}{block:PermalinkPage}<span class="us">{/block:PermalinkPage}{Month} {DayOfMonth}, {Year}{block:IndexPage}</a>{/block:IndexPage}{block:PermalinkPage}</span>{/block:PermalinkPage}
         {block:IndexPage}<a class="uk" href="{Permalink}">{/block:IndexPage}{block:PermalinkPage}<span class="uk">{/block:PermalinkPage}{DayOfMonth} {Month}, {Year}{block:IndexPage}</a>{/block:IndexPage}{block:PermalinkPage}</span>{/block:PermalinkPage}
-        {block:IndexPage}<a class="jp" href="{Permalink}">{/block:IndexPage}{block:PermalinkPage}<span class="jp">{/block:PermalinkPage}{Year}年{Month}{DayOfMonth}日{block:IndexPage}</a>{/block:IndexPage}{block:PermalinkPage}</span>{/block:PermalinkPage}
+        {block:IndexPage}<a class="jp" href="{Permalink}">{/block:IndexPage}{block:PermalinkPage}<span class="jp">{/block:PermalinkPage}{Year}年{MonthNumber}月{DayOfMonth}日{block:IndexPage}</a>{/block:IndexPage}{block:PermalinkPage}</span>{/block:PermalinkPage}
     </div>
     {/block:IfShowdate}
 
@@ -1264,7 +1264,7 @@ $(function() {
         content.style.opacity = "1";    //appears the content block once initial images are loaded
     });
     imgLoad.on('progress', function(instance, image){
-        $(image.img).closest('.photoset-grid-lightbox').photosetGrid({gutter:'2px' });    //Grids up photosets nicely
+        $('image.img').closest('.photoset-grid-lightbox').photosetGrid({gutter:'2px' });    //Grids up photosets nicely
 
     });
     $(window).load(function(){      //Waits a sec before running infinite scroll
