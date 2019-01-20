@@ -22,6 +22,7 @@
         <meta name="text:URL Google" content=""/>
         <meta name="text:URL Email" content=""/>
         <meta name="text:URL Instagram" content=""/>
+        <meta name="text:Google font" content=""/>
 
         <meta name="select:Date format" content="relative-dates" title="Relative dates">
         <meta name="select:Date format" content="us" title="US">
@@ -53,7 +54,7 @@
         <!-- Custom font -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-        <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family={text:Google font}" rel="stylesheet">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -128,7 +129,8 @@ input {
 /* Basic Style */
 
 body {
-    font-family: "Varela", Helvetica, Arial, sans-serif;
+    {block:IfGooglefont}font-family: '{text:Google font}', 'Inter UI', Helvetica, sans-serif;{/block:IfGooglefont};
+    font-family: 'Inter UI', sans-serif;
     font-size: 1rem;
     line-height: 2rem;
     color: {color:Body text};
@@ -161,31 +163,28 @@ article a {
 .site-title {
     margin-block-start: 0;
     margin-block-end: 0;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    margin-top: 45px;
     transition: none;
 }
 
 .site-title a {
-    font-family: "Varela", Helvetica, Arial, sans-serif;
     color: {color:Site Title text};
     text-transform: uppercase;
-    font-size: 4.2rem;
-    line-height: 4rem;
+    font-size: 3rem;
     transition: none;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 375px) {
     .site-title a {
-        font-size: 10.2rem;
-        line-height: 14rem;
-        padding-bottom: 0;
+        line-height: 3.2rem;
     }
 }
 
 .note-count a,
 .date a {
     color: {color:Post meta text};
-    font-size: .75rem;
+    font-size: .8rem;
 }
 
 .note-count a:hover,
@@ -223,7 +222,7 @@ article a {
 }
 
 .description-wrapper {
-    padding-bottom: 62px;
+    padding-bottom: 82px;
     max-width: 462px;
     font-size: .92rem;
 }
@@ -231,8 +230,7 @@ article a {
 /* header */
 
 .header a {
-    text-transform: uppercase;
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 
@@ -358,7 +356,7 @@ article a {
 }
 
 .search-form input {
-    font-family: "Varela", Helvetica, Arial, sans-serif;
+    font-family: "Inter UI", Helvetica, Arial, sans-serif;
     border: none;
     padding: 8px;
     color: {color:Body text};
@@ -384,8 +382,7 @@ article {
   margin-bottom: 88px;
   padding: 0;
   width: 100%;
-  font-size: 0.92rem;
-  letter-spacing: .05rem;
+  font-size: 1rem;
   overflow: hidden;
 }
 
@@ -574,7 +571,7 @@ article blockquote img{
 .post-footer {
     margin-top: 24px;
     letter-spacing: initial;
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -624,6 +621,7 @@ ol.notes {
     list-style: none;
     font-weight: 300;
     padding: 0;
+    font-size: .8rem;
 }
 
 ol.notes a {
@@ -661,7 +659,7 @@ ol.notes li a {
 /* tags */
 
 ul.tags li a {
-    font-size: .7rem;
+    font-size: .9rem;
 }
 
 ul.tags li {
@@ -869,6 +867,12 @@ footer.footer a {
 /* Custom CSS */
 {CustomCSS}
 </style>
+
+<style>@import url('https://rsms.me/inter/inter-ui.css');
+html { font-family: 'Inter UI', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter UI var alt', sans-serif; }
+}</style>
 
 {block:IfGoogleAnalyticsID}
 <script>
